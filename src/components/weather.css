@@ -1,0 +1,166 @@
+
+.weather {
+    place-self: center;
+    padding: 40px;
+    border-radius: 20px;
+    background-image: linear-gradient(135deg, #0a6f9e, #4d4d86);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    transition: all 0.3s ease;
+    position: relative; /* Added for pseudo-element */
+    overflow: hidden; /* Hide overflow for pseudo-element */
+}
+
+.weather:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    z-index: -1;
+    filter: blur(20px);
+    animation: pulse 5s infinite; /* Pulsing effect */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    justify-content: center;
+}
+
+.searchbar input {
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    padding-left: 25px;
+    color: #333;
+    background: linear-gradient(135deg, #47dbaf, #e4ead8);
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    width: 250px;
+}
+
+.searchbar input:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.searchbar img {
+    width: 50px;
+    padding: 15px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3698d9, #ebfffc);
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.searchbar img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.dayicon {
+    width: 150px;
+    margin: 30px 0;
+    animation: bounce 2s infinite; /* Added bounce animation */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.temp {
+    color: #fff;
+    font-size: 70px;
+    line-height: 1;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.temp:hover {
+    color: #ffea00;
+    text-shadow: 0 6px 15px rgba(255, 255, 0, 0.5);
+}
+
+.location {
+    color: #fff;
+    font-size: 35px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.data {
+    width: 100%;
+    margin-top: 30px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.data .col {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.data .col:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.data .col span {
+    display: block;
+    font-size: 14px;
+    color: #f0f0f0;
+}
+
+.data .col img {
+    width: 30px;
+    margin-top: 5px;
+    transition: all 0.3s ease;
+}
+
+.data .col img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.3));
+}
